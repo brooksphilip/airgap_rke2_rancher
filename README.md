@@ -1,5 +1,5 @@
 # airgap_rke2
-
+![architecture](https://raw.github.com/brooksphilip/airgap_rke2/blob/main/img/arch1.svg)
 In this tourtorial we are going to airgap Rancher and RKE2. 
 
 ### Prereq's
@@ -54,4 +54,13 @@ libnftnl
 policycoreutils-python-utils
 rke2-common
 rke2-selinux
+```
+
+Pull Install script and checksums
+```
+#RKE2-Version=1.24.16
+mkdir /root/rke2-artifacts && cd /root/rke2-artifacts/
+curl -OLs https://github.com/rancher/rke2/releases/download/v1.21.5%2Brke2r2/rke2.linux-amd64.tar.gz
+curl -OLs https://github.com/rancher/rke2/releases/download/v1.21.5%2Brke2r2/sha256sum-amd64.txt
+curl -sfL https://get.rke2.io --output install.sh
 ```
