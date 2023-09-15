@@ -7,7 +7,7 @@ TARGET_REGISTRY_USER="$2"
 TARGET_REGISTRY_PASSWORD="$3"
 
 # Source and Working Files
-SOURCE_TAR=$1
+SOURCE_TAR=$4
 WORKING_DIR="../workingdir/images"  # Change this if desired/necessary
 
 if [[ ! -f "$SOURCE_TAR" ]]; then
