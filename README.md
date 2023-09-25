@@ -8,7 +8,7 @@ TODO
 ---
 
 ### Prereq's
-* Private Registry in the Airgap
+* Private Image and Chart Registry in the Airgap I reccomend [Harbor](https://goharbor.io/)
 * [Cosign](https://github.com/sigstore/cosign)
 * [Helm](https://helm.sh/docs/intro/install/)
 
