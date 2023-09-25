@@ -6,7 +6,7 @@ In this tourtorial we are going to airgap Rancher and RKE2.
 
 ### Prereq's
 * Private Registry in the Airgap
-* Cosign
+* [Cosign](https://github.com/sigstore/cosign)
 * Helm
 
 ### Steps
