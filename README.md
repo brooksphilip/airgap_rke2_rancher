@@ -1,6 +1,8 @@
 # airgap_rke2
-![architecture](https://raw.github.com/brooksphilip/airgap_rke2/blob/main/img/arch1.svg)
+![architecture](https://raw.githubusercontent.com/brooksphilip/airgap_rke2_rancher/main/img/arch1.svg)
 In this tourtorial we are going to airgap Rancher and RKE2. 
+
+## Index
 
 ### Prereq's
 * Private Registry in the Airgap
@@ -66,4 +68,11 @@ curl -OLs https://github.com/rancher/rke2/releases/download/v1.21.5%2Brke2r2/rke
 curl -OLs https://github.com/rancher/rke2/releases/download/v1.21.5%2Brke2r2/sha256sum-amd64.txt
 curl -sfL https://get.rke2.io --output install.sh
 ```
+
+6. Lets deploy Rancher
+```
+helm upgrade -i rancher rancher-harbor/rancher   --namespace cattle-system   --set hostname=rancher.airgap.rancher.lol   --set bootstrapPassword=admin --set global.cattle.psp.enabled=false --version=v2.7.6 --set useBundledSystemChart=true --set rancherImage=rancher.edge.rancher.lol/rancher/rancher --set systemDefaultRegistry=harbor.edge.rancher.lol
+```
+
+
 If you feel ballzy - YOLO
