@@ -1,5 +1,5 @@
 # airgap_rke2
-![architecture](https://raw.githubusercontent.com/brooksphilip/airgap_rke2_rancher/main/img/arch1.svg)
+![architecture](https://raw.githubusercontent.com/brooksphilip/airgap_rke2_rancher/main/img/arch2.svg)
 In this tourtorial we are going to airgap Rancher and RKE2. 
 
 ## Index
