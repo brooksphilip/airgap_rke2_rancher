@@ -1,10 +1,10 @@
 # Rancher Version
-RANCHER_RELEASE="v2.7.6"
+RANCHER_RELEASE="v2.8.1"
 
 # Working directories & TAR
-TAR_DIR=./
-DEST_DIRECTORY=/tmp/rancher-images
-DEST_TAR=${TAR_DIR}rancher-images-${RANCHER_RELEASE}.tar.gz  # Change this to the location you want for your resulting TAR 
+TAR_DIR=../rancher # dir where you want to save the final tar
+DEST_DIRECTORY=../workingdir/rancher-images # working dir to save the images before zipping them up
+DEST_TAR=${TAR_DIR}/rancher-images-${RANCHER_RELEASE}.tar.gz  # Change this to the location you want for your resulting TAR 
 
 if [[ -d "$DEST_DIRECTORY" ]]; then
     echo "ERROR: Directory '$DEST_DIRECTORY' exists."
@@ -33,6 +33,7 @@ for image in $RANCHER_IMAGES; do
     # Save image locally
     mkdir $DEST_DIRECTORY/$img_id_num
     cosign save --dir "$DEST_DIRECTORY/$img_id_num" $source_image
+    echo "Image pull success:" $source_image
     rm -rf $img_id_num
 done
 
