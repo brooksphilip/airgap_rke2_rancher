@@ -39,7 +39,7 @@ done
 
 echo "Compressing Release"
 # Compress directory
-tar -zcfv "$DEST_TAR" -C "$DEST_DIRECTORY" .
+tar zcf "$DEST_TAR" -C "$DEST_DIRECTORY" .
 
 # Clean up working directory
 rm -rf $DEST_DIRECTORY
