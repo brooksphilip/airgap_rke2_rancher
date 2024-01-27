@@ -1,10 +1,10 @@
 #!/bin/bash
 # NeuVector Chart Version
-NEUVECTOR_RELEASE=v2.6.2
+NEUVECTOR_RELEASE=v2.7.1
 
 # Working directories & TAR
-DEST_DIRECTORY=../neuvector/neuvector-images
-DEST_TAR=../../CARBIDE/neuvector/neuvector-images-${NEUVECTOR_RELEASE}.tar.gz  # Change this to the location you want for your resulting TAR 
+DEST_DIRECTORY=../workingdir/neuvector-images
+DEST_TAR=../neuvector/neuvector-images-${NEUVECTOR_RELEASE}.tar.gz  # Change this to the location you want for your resulting TAR 
 
 
 if [[ -d "$DEST_DIRECTORY" ]]; then
@@ -28,8 +28,8 @@ helm repo update
 
 # Grab the list of images and download them (requires docker, grep, sed, and awk)
 for image in $(helm template neuvector neuvector/core --version $NEUVECTOR_RELEASE | grep 'image:' | sed 's/"//g' | sed "s/'//g" | awk '{ print $2 }'); do
-    source_image=$image
-    dest_image="TARGET_REGISTRY/$image"
+    source_image=$(echo $image | sed "s/docker.io/$SOURCE_REGISTRY/g")
+    dest_image=$(echo $image | sed "s/docker.io/TARGET_REGISTRY/g")
     
     # Create manifest to use during load
     img_id_num=$(mktemp -d XXXXXXXXXXXXXXXXXXXX)
