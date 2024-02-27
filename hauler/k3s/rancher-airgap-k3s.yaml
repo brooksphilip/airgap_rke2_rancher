@@ -18,7 +18,7 @@ spec:
       name: k3s-airgap-images-arm64.tar.gz
     - path: https://github.com/k3s-io/k3s/releases/download/v1.27.10%2Bk3s2/sha256sum-arm64.txt
       name: sha256sum-arm64.txt
-    - path: hhttps://github.com/k3s-io/k3s/releases/download/v1.27.10%2Bk3s2/k3s-arm64
+    - path: https://github.com/k3s-io/k3s/releases/download/v1.27.10%2Bk3s2/k3s-arm64
       name: k3s-arm64
     - path: https://get.k3s.io
       name: install.sh
