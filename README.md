@@ -59,17 +59,23 @@ libnetfilter_conntrack
 libnfnetlink
 libnftnl
 policycoreutils-python-utils
-rke2-common
-rke2-selinux
 ```
 
-Pull Install script and checksums
+Install the rke2 rpms in the following order
 ```
-#RKE2-Version=1.24.16
-mkdir /root/rke2-artifacts && cd /root/rke2-artifacts/
-curl -OLs https://github.com/rancher/rke2/releases/download/v1.21.5%2Brke2r2/rke2.linux-amd64.tar.gz
-curl -OLs https://github.com/rancher/rke2/releases/download/v1.21.5%2Brke2r2/sha256sum-amd64.txt
-curl -sfL https://get.rke2.io --output install.sh
+rke2-selinux
+rke2-common
+rke2-server
+```
+
+Create your config.yaml
+```
+echo 'system-default-registry: "registry.example.com:5000"' > /etc/rancher/rke2/config.yaml
+```
+
+Enable and start the service 
+```
+systemctl enable rke2-server --now
 ```
 
 6. Lets deploy Rancher
