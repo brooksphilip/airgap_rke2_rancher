@@ -17,26 +17,19 @@ TODO
 1. Download Images and Tar them up
 Utilize the scripts above in order to download and TAR up the appropriate Rancher, RKE2, and K3s images. 
 
-Rancher Images 
-```bash
-./pull_rancher.sh
-```
-RKE2 Images
-```bash
-./pull_rke2.sh
-```
+Use Hauler 
 
 2. Gather Install Scripts and Helm charts 
 
 ##### Transfer & upload
 3. Tranfer them over the Airgap
 
+Use Hauler 
+
 4. Upload Images to your private registry
 
-Utilize the push script to push images 
-```bash
-./push.sh <registry_URL> <registry_user> <registry_password> <images_tar>
-```
+Use Hauler 
+
 ##### Deploy
 5. Now Lets Deploy RKE2
 
